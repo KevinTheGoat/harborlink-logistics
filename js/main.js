@@ -1,5 +1,5 @@
 /**
- * HarborLink Logistics - Main JavaScript
+ * NEXUS Caribbean Logistics - Main JavaScript
  * Handles navigation, smooth scroll, and form functionality
  */
 
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="form-success">
                 <i class="fas fa-check-circle"></i>
                 <h3>Message Sent!</h3>
-                <p>Thank you for contacting HarborLink Logistics. We'll get back to you shortly.</p>
+                <p>Thank you for contacting NEXUS Caribbean Logistics. We'll get back to you shortly.</p>
                 <a href="https://wa.me/17867158532" class="btn btn-whatsapp" style="margin-top: 20px;">
                     <i class="fab fa-whatsapp"></i> Chat on WhatsApp
                 </a>

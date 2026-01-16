@@ -1,6 +1,6 @@
 /* ===================================
-   HarborLink Logistics - Styles
-   Maritime Theme: Navy / Teal / White
+   NEXUS Caribbean Logistics - Styles
+   Maritime Theme: Navy / Gold / White
    =================================== */
 
 /* CSS Variables */
@@ -9,9 +9,9 @@
     --navy: #1a365d;
     --navy-dark: #0f2744;
     --navy-light: #2c5282;
-    --teal: #0d9488;
-    --teal-dark: #0a7269;
-    --teal-light: #14b8a6;
+    --gold: #FFD700;
+    --gold-dark: #FFA500;
+    --gold-light: #FFED4E;
     --white: #ffffff;
     --gray-50: #f9fafb;
     --gray-100: #f3f4f6;
@@ -22,8 +22,8 @@
     --gray-800: #1f2937;
 
     /* Typography */
-    --font-heading: 'Montserrat', sans-serif;
-    --font-body: 'Open Sans', sans-serif;
+    --font-heading: 'DM Serif Display', serif;
+    --font-body: 'Outfit', sans-serif;
 
     /* Spacing */
     --section-padding: 80px 0;
@@ -55,16 +55,19 @@ html {
 body {
     font-family: var(--font-body);
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.7;
     color: var(--gray-700);
     background-color: var(--white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    font-weight: 700;
+    font-weight: 400;
     color: var(--navy);
     line-height: 1.2;
+    letter-spacing: -0.02em;
 }
 
 a {
@@ -82,6 +85,12 @@ ul {
     list-style: none;
 }
 
+/* Iconify Icon Styling */
+iconify-icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
 /* Container */
 .container {
     max-width: 1200px;
@@ -94,28 +103,29 @@ ul {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    padding: 14px 28px;
-    font-family: var(--font-heading);
+    gap: 10px;
+    padding: 16px 32px;
+    font-family: var(--font-body);
     font-size: 16px;
     font-weight: 600;
-    border-radius: 8px;
+    border-radius: 10px;
     border: 2px solid transparent;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.03em;
 }
 
 .btn-primary {
-    background: var(--teal);
+    background: var(--gold);
     color: var(--white);
-    border-color: var(--teal);
+    border-color: var(--gold);
 }
 
 .btn-primary:hover {
-    background: var(--teal-dark);
-    border-color: var(--teal-dark);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    background: var(--gold-dark);
+    border-color: var(--gold-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255, 215, 0, 0.4);
 }
 
 .btn-outline {
@@ -152,19 +162,20 @@ ul {
 }
 
 .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+    font-size: 3rem;
+    margin-bottom: 20px;
     position: relative;
+    font-style: italic;
 }
 
 .section-title::after {
     content: '';
     display: block;
-    width: 60px;
-    height: 4px;
-    background: var(--teal);
-    margin: 15px auto 0;
-    border-radius: 2px;
+    width: 80px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    margin: 20px auto 0;
+    border-radius: 3px;
 }
 
 .section-subtitle {
@@ -207,22 +218,24 @@ ul {
 }
 
 .logo-img {
-    height: 45px;
+    height: 90px;
     width: auto;
 }
 
 .logo-text {
     font-family: var(--font-heading);
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 400;
     color: var(--white);
     display: flex;
     align-items: center;
     gap: 8px;
+    font-style: italic;
 }
 
-.logo-text i {
-    color: var(--teal-light);
+.logo-text iconify-icon {
+    color: var(--gold-light);
+    font-size: 1.8rem;
 }
 
 .nav-menu {
@@ -232,12 +245,13 @@ ul {
 }
 
 .nav-link {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-size: 15px;
     font-weight: 500;
     color: var(--white);
     padding: 5px 0;
     position: relative;
+    letter-spacing: 0.02em;
 }
 
 .nav-link::after {
@@ -247,7 +261,7 @@ ul {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--teal-light);
+    background: var(--gold-light);
     transition: var(--transition);
 }
 
@@ -256,7 +270,7 @@ ul {
 }
 
 .nav-cta {
-    background: var(--teal);
+    background: var(--gold);
     padding: 10px 20px;
     border-radius: 6px;
 }
@@ -266,7 +280,7 @@ ul {
 }
 
 .nav-cta:hover {
-    background: var(--teal-light);
+    background: var(--gold-light);
 }
 
 /* Mobile Navigation Toggle */
@@ -362,18 +376,22 @@ ul {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     color: var(--white);
-    margin-bottom: 20px;
-    animation: fadeInUp 0.8s ease;
+    margin-bottom: 24px;
+    animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1);
+    font-style: italic;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 600px;
-    margin: 0 auto 40px;
-    animation: fadeInUp 0.8s ease 0.2s both;
+    font-size: 1.35rem;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 700px;
+    margin: 0 auto 50px;
+    animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+    font-weight: 300;
+    line-height: 1.8;
 }
 
 .hero-buttons {
@@ -424,32 +442,57 @@ ul {
 
 .service-card {
     background: var(--white);
-    padding: 35px 30px;
-    border-radius: 12px;
+    padding: 40px 35px;
+    border-radius: 16px;
     box-shadow: var(--shadow);
-    transition: var(--transition);
-    border: 1px solid var(--gray-100);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    transform: scaleX(0);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-xl);
-    border-color: var(--teal);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(26, 54, 93, 0.15);
+    border-color: var(--gold-light);
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
 }
 
 .service-icon {
-    width: 70px;
-    height: 70px;
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-    border-radius: 12px;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
 
-.service-icon i {
-    font-size: 28px;
+.service-card:hover .service-icon {
+    transform: rotate(5deg) scale(1.1);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+}
+
+.service-icon iconify-icon {
+    font-size: 36px;
     color: var(--white);
 }
 
@@ -469,13 +512,13 @@ ul {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: var(--teal);
+    color: var(--gold);
     font-weight: 600;
     font-size: 0.95rem;
 }
 
 .service-link:hover {
-    color: var(--teal-dark);
+    color: var(--gold-dark);
     gap: 12px;
 }
 
@@ -502,9 +545,10 @@ ul {
     gap: 10px;
 }
 
-.ports h3 i,
-.destinations h3 i {
-    color: var(--teal);
+.ports h3 iconify-icon,
+.destinations h3 iconify-icon {
+    color: var(--gold);
+    font-size: 1.6rem;
 }
 
 .port-cards {
@@ -518,7 +562,7 @@ ul {
     padding: 25px;
     border-radius: 10px;
     box-shadow: var(--shadow-sm);
-    border-left: 4px solid var(--teal);
+    border-left: 4px solid var(--gold);
     transition: var(--transition);
 }
 
@@ -527,10 +571,11 @@ ul {
     transform: translateX(5px);
 }
 
-.port-card i {
-    color: var(--teal);
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+.port-card iconify-icon {
+    color: var(--gold);
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    display: block;
 }
 
 .port-card h4 {
@@ -551,23 +596,31 @@ ul {
 
 .destination-item {
     background: var(--white);
-    padding: 20px;
-    border-radius: 10px;
+    padding: 25px 20px;
+    border-radius: 12px;
     text-align: center;
     box-shadow: var(--shadow-sm);
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    overflow: hidden;
 }
 
 .destination-item:hover {
-    box-shadow: var(--shadow);
-    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
+    border-color: var(--gold-light);
 }
 
-.destination-item i {
-    font-size: 1.8rem;
+.destination-item iconify-icon {
+    font-size: 2.2rem;
     color: var(--navy);
-    margin-bottom: 10px;
-    display: block;
+    margin: 0 auto 12px;
+    display: inline-block;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.destination-item:hover iconify-icon {
+    color: var(--gold);
 }
 
 .destination-item span {
@@ -578,7 +631,7 @@ ul {
 
 .destination-item small {
     font-size: 0.8rem;
-    color: var(--teal);
+    color: var(--gold);
     font-weight: 500;
 }
 
@@ -587,13 +640,13 @@ ul {
     grid-column: span 2;
 }
 
-.destination-item.primary i,
+.destination-item.primary iconify-icon,
 .destination-item.primary span {
     color: var(--white);
 }
 
 .destination-item.primary small {
-    color: var(--teal-light);
+    color: var(--gold-light);
 }
 
 .destination-item.more {
@@ -601,8 +654,8 @@ ul {
     background: transparent;
 }
 
-.destination-item.more i {
-    color: var(--teal);
+.destination-item.more iconify-icon {
+    color: var(--gold);
 }
 
 /* ===================================
@@ -646,9 +699,9 @@ ul {
     align-items: flex-start;
 }
 
-.feature i {
-    color: var(--teal);
-    font-size: 1.3rem;
+.feature iconify-icon {
+    color: var(--gold);
+    font-size: 1.5rem;
     margin-top: 3px;
 }
 
@@ -680,7 +733,7 @@ ul {
     background: var(--navy);
 }
 
-.stat-card:hover i,
+.stat-card:hover iconify-icon,
 .stat-card:hover h3,
 .stat-card:hover p {
     color: var(--white);
@@ -691,15 +744,15 @@ ul {
     background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
 }
 
-.stat-card:first-child i,
+.stat-card:first-child iconify-icon,
 .stat-card:first-child h3,
 .stat-card:first-child p {
     color: var(--white);
 }
 
-.stat-card i {
-    font-size: 2rem;
-    color: var(--teal);
+.stat-card iconify-icon {
+    font-size: 2.5rem;
+    color: var(--gold);
     margin-bottom: 15px;
     display: block;
 }
@@ -728,7 +781,7 @@ ul {
 }
 
 .payment .section-title::after {
-    background: var(--teal-light);
+    background: var(--gold-light);
 }
 
 .payment-grid {
@@ -738,24 +791,50 @@ ul {
 }
 
 .payment-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 35px 25px;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    padding: 40px 30px;
+    border-radius: 16px;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: var(--transition);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.payment-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 .payment-card:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-8px) scale(1.03);
+    border-color: var(--gold-light);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
-.payment-card i {
-    font-size: 2.5rem;
-    color: var(--teal-light);
-    margin-bottom: 15px;
+.payment-card:hover::before {
+    opacity: 1;
+}
+
+.payment-card iconify-icon {
+    font-size: 3rem;
+    color: var(--gold-light);
+    margin-bottom: 20px;
+    display: block;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.payment-card:hover iconify-icon {
+    transform: scale(1.15) rotate(5deg);
 }
 
 .payment-card h4 {
@@ -803,7 +882,7 @@ ul {
     border-bottom: none;
 }
 
-.contact-item i {
+.contact-item iconify-icon {
     width: 50px;
     height: 50px;
     background: var(--gray-100);
@@ -811,11 +890,12 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: var(--navy);
+    flex-shrink: 0;
 }
 
-.contact-item.whatsapp i {
+.contact-item.whatsapp iconify-icon {
     background: #25D366;
     color: var(--white);
 }
@@ -834,7 +914,7 @@ ul {
 }
 
 .contact-item a:hover {
-    color: var(--teal);
+    color: var(--gold);
 }
 
 .contact-cta {
@@ -892,8 +972,8 @@ ul {
 .contact-form select:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: var(--teal);
-    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
 }
 
 .contact-form textarea {
@@ -941,8 +1021,9 @@ ul {
     margin-bottom: 15px;
 }
 
-.footer-logo i {
-    color: var(--teal-light);
+.footer-logo iconify-icon {
+    color: var(--gold-light);
+    font-size: 1.8rem;
 }
 
 .footer-brand p {
@@ -961,7 +1042,7 @@ ul {
 }
 
 .footer-links a:hover {
-    color: var(--teal-light);
+    color: var(--gold-light);
 }
 
 .footer-contact li {
@@ -970,8 +1051,9 @@ ul {
     gap: 10px;
 }
 
-.footer-contact i {
-    color: var(--teal-light);
+.footer-contact iconify-icon {
+    color: var(--gold-light);
+    font-size: 1.2rem;
 }
 
 .footer-bottom {
@@ -999,8 +1081,8 @@ ul {
     transition: var(--transition);
 }
 
-.whatsapp-float i {
-    font-size: 32px;
+.whatsapp-float iconify-icon {
+    font-size: 38px;
     color: var(--white);
 }
 
@@ -1217,7 +1299,7 @@ ul {
 
 .form-success i {
     font-size: 4rem;
-    color: var(--teal);
+    color: var(--gold);
     margin-bottom: 20px;
 }
 
